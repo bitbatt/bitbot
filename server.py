@@ -7,7 +7,7 @@ app = Flask(__name__)
 port = int(os.environ["PORT"])
 print(port)
 
-@app.route('/', methods=['POST' , 'GET'])
+@app.route('/', methods=['POST'])
 def index():
   print(port)
   data = json.loads(request.get_data())
@@ -26,7 +26,7 @@ def index():
     }]
   )
 
-@app.route('/errors', methods=['POST' , 'GET'])
+@app.route('/errors', methods=['POST'])
 def errors():
   print(json.loads(request.get_data()))
   return jsonify(status=200)
